@@ -1,0 +1,10 @@
+# Default ignored files
+/../../ex03./.idea/shelf/
+/../../ex03./.idea/workspace.xml
+# Ignored default folder with query files
+/../../ex03./.idea/queries/
+# Datasource local storage ignored files
+/../../ex03./.idea/dataSources/
+/../../ex03./.idea/dataSources.local.xml
+# Editor-based HTTP Client requests
+/../../ex03./.idea/httpRequests/
