@@ -4,14 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-     int N= sc.nextInt();
-     int i;
-     int fat=1;
-     for (i=1; i<=N; i++) {
-         fat= fat *i;
+        int N= sc.nextInt();
+        int i;
+        int fat=1;
+        for (i=1; i<=N; i++) {
+            fat= fat *i;
 
-     }
+        }
         System.out.println(fat);
-    sc.close();
+        sc.close();
     }
 }
