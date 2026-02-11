@@ -1,17 +1,37 @@
+
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import db.Db;
+import db.Db;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
 
-        Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/",
-                "root",
-                "2008"
-        );
+    public static void main(String[] args) {
 
-        System.out.println("Conectou!");
-        conn.close();
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            conn = Db.getConnection();
+
+            st = conn.createStatement();
+
+            rs = st.executeQuery("select * from department");
+
+            while (rs.next()) {
+                System.out.println(rs.getInt("Id") + ", " + rs.getString("Name"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            Db.closeResultSet(rs);
+            Db.closeStatement(st);
+            Db.closeConnection();
+        }
     }
 }
-
